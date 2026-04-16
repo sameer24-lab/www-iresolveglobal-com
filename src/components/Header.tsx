@@ -57,7 +57,7 @@ const Header = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="iResolve Global" className="h-24 w-auto" />
+          <img src={logo} alt="iResolve Global" className="h-36 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
