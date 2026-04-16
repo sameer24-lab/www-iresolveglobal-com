@@ -15,7 +15,7 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover z-0"
         src={heroBgVideo.url}
       />
-      <div className="absolute inset-0 bg-background/60 z-0" />
+      <div className="absolute inset-0 bg-background/75 z-0" />
       <div className="absolute inset-0 bg-gradient-radial z-0" />
 
       <div className="relative z-10 container mx-auto px-4 text-center pt-24 pb-16">
