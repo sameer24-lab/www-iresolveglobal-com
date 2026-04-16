@@ -1,64 +1,50 @@
 import { motion } from "framer-motion";
-import { TrendingUp, Megaphone, Users, DollarSign } from "lucide-react";
+import { Rocket, Users, Megaphone, Settings } from "lucide-react";
 
 const services = [
   {
-    icon: TrendingUp,
-    title: "Pipeline Generation",
+    icon: Rocket,
+    title: "Revenue Engine Setup",
     description:
-      "Build a consistent flow of qualified leads through targeted outreach, structured pipelines, and optimized conversion strategies.",
+      "Build a predictable revenue machine with outbound systems, CRM automation, and lead generation frameworks.",
     tags: [
-      "Lead sourcing & targeting",
-      "Pipeline setup & tracking",
-      "Conversion improvement",
+      "Outbound Campaigns (Email, LinkedIn, Calling)",
+      "CRM + Pipeline Setup",
+      "Lead Generation Systems",
     ],
-    size: "normal" as const,
-  },
-  {
-    icon: Megaphone,
-    title: "Marketing & Demand Generation",
-    description:
-      "Drive awareness, generate demand, and convert prospects through performance-driven marketing strategies.",
-    tags: [
-      "Demand Generation",
-      "Digital Marketing",
-      "Campaign Strategy",
-      "Awareness Campaigns",
-      "Marketing Automation",
-      "SEO Optimization",
-      "Brand Positioning",
-      "Marketing Acceleration",
-    ],
-    size: "large" as const,
   },
   {
     icon: Users,
-    title: "Sales & Team Enablement",
+    title: "Offshore Team Setup",
     description:
-      "Strengthen your sales function with the right strategy, processes, and team support to improve performance.",
+      "Scale your operations with dedicated remote teams — hired, trained, and managed for peak performance.",
     tags: [
-      "Pipeline to Revenue",
-      "Growth Enablement",
-      "Inside Sales Setup",
-      "Sales Acceleration",
+      "60% Cost Savings",
+      "Hiring + Onboarding in 2 Weeks",
+      "Dedicated Remote Teams",
     ],
-    size: "large" as const,
   },
   {
-    icon: DollarSign,
-    title: "Cost Optimization",
+    icon: Megaphone,
+    title: "Demand Generation",
     description:
-      "Build and scale dedicated teams or execute projects efficiently while optimizing operational costs.",
+      "Drive awareness, fill your pipeline, and book meetings with multi-channel demand generation campaigns.",
     tags: [
-      "Identify Gaps",
-      "Productivity",
-      "Improve margins",
-      "Team Setup",
-      "Project Based Execution",
-      "Smart Scaling",
-      "Execution Pods",
+      "Multi-Channel Campaigns",
+      "500+ Prospects/Month",
+      "Meeting Booking Systems",
     ],
-    size: "normal" as const,
+  },
+  {
+    icon: Settings,
+    title: "Business Operations",
+    description:
+      "Streamline your processes, automate workflows, and track KPIs to run a lean, scalable operation.",
+    tags: [
+      "Process Optimization",
+      "Automation + Workflows",
+      "KPI Tracking",
+    ],
   },
 ];
 
@@ -90,6 +76,9 @@ const ServicesSection = () => (
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="glass rounded-2xl p-8 group hover:border-primary/30 transition-all duration-500"
           >
+            <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+              <s.icon className="w-6 h-6 text-primary" />
+            </div>
             <h3 className="font-heading text-2xl font-bold mb-3">
               {s.title}
             </h3>
@@ -97,7 +86,6 @@ const ServicesSection = () => (
               {s.description}
             </p>
 
-            {/* Tags area */}
             <div className="flex flex-wrap gap-2">
               {s.tags.map((tag) => (
                 <span
@@ -105,7 +93,6 @@ const ServicesSection = () => (
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 text-xs text-muted-foreground"
                 >
                   {tag}
-                  <TrendingUp className="w-3 h-3 text-primary/60" />
                 </span>
               ))}
             </div>
