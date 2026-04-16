@@ -68,7 +68,7 @@ const BusinessOperations = () => (
             Streamline your processes, automate workflows, and track KPIs to run a lean, scalable operation that grows with your business.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="#contact" className="px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all hover:-translate-y-0.5">
+            <a href="/#contact" className="px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold hover:shadow-lg hover:shadow-primary/25 transition-all hover:-translate-y-0.5">
               Optimize Operations
             </a>
             <a href="https://wa.me/917620054388?text=Hi%2C%20I%20want%20to%20know%20about%20Business%20Operations" target="_blank" rel="noopener noreferrer" className="px-8 py-3.5 rounded-lg border border-border text-foreground font-semibold hover:bg-muted/50 transition-all">
