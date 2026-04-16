@@ -15,7 +15,7 @@ const solutionLinks = [
 
 const navLinks = [
   { label: "Explore Solutions", href: "/#solutions", dropdown: true },
-  { label: "What We Solve", href: "/#about" },
+  { label: "What We Solve", href: "/#execution" },
   { label: "Why Choose Us", href: "/#why-us" },
   { label: "Execution Playbooks", href: "/case-studies" },
   { label: "Plan Your Growth Strategy", href: "/#contact" },

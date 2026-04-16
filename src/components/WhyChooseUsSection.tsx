@@ -54,7 +54,7 @@ const scrollingTags = [
 ];
 
 const WhyChooseUsSection = () => (
-  <section className="py-24 relative overflow-hidden">
+  <section id="why-us" className="py-24 relative overflow-hidden">
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
