@@ -30,7 +30,7 @@ const badges = [
 ];
 
 const AboutSection = () => (
-  <section id="about" className="py-24 relative overflow-hidden">
+  <section id="execution" className="py-24 relative overflow-hidden">
     {/* Decorative glow */}
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
