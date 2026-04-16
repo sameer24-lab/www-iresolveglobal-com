@@ -51,12 +51,13 @@ const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/30"
+      className="fixed top-0 left-0 right-0 z-50"
     >
-      <div className="container mx-auto flex items-center justify-between py-1 px-4 lg:px-8">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="iResolve Global" className="h-16 w-auto" />
-        </Link>
+      {/* Logo - sits above header bar */}
+      <Link to="/" className="absolute top-2 left-4 lg:left-8 z-10">
+        <img src={logo} alt="iResolve Global" className="h-16 w-auto" />
+      </Link>
+      <div className="container mx-auto flex items-center justify-end py-3 px-4 lg:px-8">
 
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((l) => {
