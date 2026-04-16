@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Rocket, Users, Megaphone, Settings } from "lucide-react";
+import { Rocket, Users, Megaphone, Settings, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -12,6 +13,7 @@ const services = [
       "CRM + Pipeline Setup",
       "Lead Generation Systems",
     ],
+    href: "/solutions/revenue-engine",
   },
   {
     icon: Users,
@@ -23,6 +25,7 @@ const services = [
       "Hiring + Onboarding in 2 Weeks",
       "Dedicated Remote Teams",
     ],
+    href: "/solutions/offshore-team",
   },
   {
     icon: Megaphone,
@@ -34,6 +37,7 @@ const services = [
       "500+ Prospects/Month",
       "Meeting Booking Systems",
     ],
+    href: "/solutions/demand-generation",
   },
   {
     icon: Settings,
@@ -45,11 +49,12 @@ const services = [
       "Automation + Workflows",
       "KPI Tracking",
     ],
+    href: "/solutions/business-operations",
   },
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="py-24 relative">
+  <section id="solutions" className="py-24 relative">
     <div className="absolute inset-0 bg-grid opacity-30" />
     <div className="container mx-auto px-4 relative z-10">
       <motion.div
@@ -59,7 +64,7 @@ const ServicesSection = () => (
         className="text-center mb-16"
       >
         <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4">
-          Our <span className="text-gradient">4 Pillars</span> of Growth
+          Our <span className="text-gradient">Solutions</span>
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
           Everything you need to build, scale, and dominate your market.
@@ -74,28 +79,36 @@ const ServicesSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="glass rounded-2xl p-8 group hover:border-primary/30 transition-all duration-500"
           >
-            <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-              <s.icon className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="font-heading text-2xl font-bold mb-3">
-              {s.title}
-            </h3>
-            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-              {s.description}
-            </p>
+            <Link
+              to={s.href}
+              className="glass rounded-2xl p-8 group hover:border-primary/30 transition-all duration-500 block h-full"
+            >
+              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                <s.icon className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-heading text-2xl font-bold mb-3">
+                {s.title}
+              </h3>
+              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                {s.description}
+              </p>
 
-            <div className="flex flex-wrap gap-2">
-              {s.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 text-xs text-muted-foreground"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {s.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 text-xs text-muted-foreground"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-2 text-primary text-sm font-semibold group-hover:gap-3 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </div>
+            </Link>
           </motion.div>
         ))}
       </div>
