@@ -10,6 +10,7 @@ import OffshoreTeam from "./pages/OffshoreTeam.tsx";
 import DemandGeneration from "./pages/DemandGeneration.tsx";
 import BusinessOperations from "./pages/BusinessOperations.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
+import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/solutions/revenue-engine" element={<RevenueEngine />} />
