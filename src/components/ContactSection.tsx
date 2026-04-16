@@ -41,6 +41,12 @@ const ContactSection = () => {
     const errs = validate();
     setErrors(errs);
     if (Object.keys(errs).length === 0) {
+      // Build mailto link with form data
+      const subject = encodeURIComponent(`Growth Inquiry from ${form.name.trim()}`);
+      const body = encodeURIComponent(
+        `Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\nCompany: ${form.company.trim() || "N/A"}\nPhone: ${form.phone.trim() || "N/A"}\n\nMessage:\n${form.message.trim()}`
+      );
+      window.open(`mailto:info@iresolveglobal.com?subject=${subject}&body=${body}`, "_blank");
       setSubmitted(true);
     }
   };
