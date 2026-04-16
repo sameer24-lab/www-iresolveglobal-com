@@ -18,6 +18,25 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-background/75 z-0" />
       <div className="absolute inset-0 bg-gradient-radial z-0" />
 
+      {/* Animated glowing circles */}
+      <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px] top-1/4 -left-40"
+          animate={{ opacity: [0.2, 0.6, 0.2], scale: [0.9, 1.1, 0.9] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute w-[400px] h-[400px] rounded-full bg-accent/15 blur-[100px] bottom-1/4 -right-32"
+          animate={{ opacity: [0.3, 0.7, 0.3], scale: [1, 1.15, 1] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        />
+        <motion.div
+          className="absolute w-[300px] h-[300px] rounded-full bg-primary/8 blur-[80px] top-2/3 left-1/2 -translate-x-1/2"
+          animate={{ opacity: [0.15, 0.5, 0.15], scale: [0.95, 1.1, 0.95] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+        />
+      </div>
+
       <div className="relative z-10 container mx-auto px-4 text-center pt-24 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
