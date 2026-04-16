@@ -13,7 +13,7 @@ const SocialProofStrip = () => (
       </p>
     </div>
     <div className="relative">
-      <div className="flex animate-scroll-logos">
+      <div className="flex animate-scroll-logos will-change-transform hover:[animation-play-state:paused]">
         {[...logos, ...logos].map((name, i) => (
           <div
             key={i}
