@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const WHATSAPP_URL = "https://wa.me/919876543210?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20with%20iResolve%20Global";
+const WHATSAPP_URL = "https://wa.me/917620054388?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20with%20iResolve%20Global";
 
 const CTASection = () => (
   <section className="py-24 relative overflow-hidden">
