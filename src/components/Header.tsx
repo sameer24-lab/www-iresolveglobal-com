@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, Rocket, Users, Megaphone, Settings } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const WHATSAPP_URL = "https://wa.me/919876543210?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20with%20iResolve%20Global";
 
+const solutionLinks = [
+  { label: "Revenue Engine Setup", href: "/solutions/revenue-engine", icon: Rocket },
+  { label: "Offshore Team Setup", href: "/solutions/offshore-team", icon: Users },
+  { label: "Demand Generation", href: "/solutions/demand-generation", icon: Megaphone },
+  { label: "Business Operations", href: "/solutions/business-operations", icon: Settings },
+];
+
 const navLinks = [
   { label: "About", href: "/#about" },
-  { label: "Solutions", href: "/#solutions" },
+  { label: "Solutions", href: "/#solutions", dropdown: true },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Process", href: "/#process" },
   { label: "Contact", href: "/#contact" },
