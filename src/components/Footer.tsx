@@ -5,7 +5,7 @@ const Footer = () => (
     <div className="container mx-auto px-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="iResolve Global" className="h-8 w-auto brightness-0 invert" loading="lazy" />
+          <img src={logo} alt="iResolve Global" <img src={logo} alt="iResolve Global" className="h-8 w-auto" loading="lazy" /> loading="lazy" />
         </div>
         <div className="flex gap-6 text-sm text-muted-foreground">
           <a href="#about" className="hover:text-primary transition-colors">About</a>
