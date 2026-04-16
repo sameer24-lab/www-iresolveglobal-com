@@ -55,7 +55,7 @@ const Header = () => {
     >
       {/* Logo - floats independently over the page */}
       <Link to="/" className="absolute top-2 left-4 lg:left-8 z-10 drop-shadow-[0_0_12px_hsl(var(--primary)/0.4)]">
-        <img src={logo} alt="iResolve Global" className="h-20 w-auto" />
+        <img src={logo} alt="iResolve Global" className="h-40 w-auto" />
       </Link>
       <div className="container mx-auto flex items-center justify-end py-3 px-4 lg:px-8">
 
