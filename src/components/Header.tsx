@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, Rocket, Users, Megaphone, Settings } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const WHATSAPP_URL = "https://wa.me/919876543210?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20with%20iResolve%20Global";
 
+const solutionLinks = [
+  { label: "Revenue Engine Setup", href: "/solutions/revenue-engine", icon: Rocket },
+  { label: "Offshore Team Setup", href: "/solutions/offshore-team", icon: Users },
+  { label: "Demand Generation", href: "/solutions/demand-generation", icon: Megaphone },
+  { label: "Business Operations", href: "/solutions/business-operations", icon: Settings },
+];
+
 const navLinks = [
   { label: "About", href: "/#about" },
-  { label: "Solutions", href: "/#solutions" },
+  { label: "Solutions", href: "/#solutions", dropdown: true },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Process", href: "/#process" },
   { label: "Contact", href: "/#contact" },
@@ -17,6 +24,8 @@ const navLinks = [
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -52,16 +61,65 @@ const Header = () => {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((l) =>
-            l.href.startsWith("/") && !l.href.startsWith("/#") ? (
-              <Link
-                key={l.href}
-                to={l.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {l.label}
-              </Link>
-            ) : (
+          {navLinks.map((l) => {
+            if (l.dropdown) {
+              return (
+                <div
+                  key={l.href}
+                  className="relative"
+                  onMouseEnter={() => setSolutionsOpen(true)}
+                  onMouseLeave={() => setSolutionsOpen(false)}
+                >
+                  <button
+                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(l.href);
+                    }}
+                  >
+                    {l.label}
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform ${solutionsOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  <AnimatePresence>
+                    {solutionsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 8 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 glass rounded-xl border border-border/50 shadow-xl overflow-hidden"
+                      >
+                        {solutionLinks.map((s) => (
+                          <Link
+                            key={s.href}
+                            to={s.href}
+                            className="flex items-center gap-3 px-4 py-3 text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"
+                            onClick={() => setSolutionsOpen(false)}
+                          >
+                            <s.icon className="w-4 h-4 text-primary" />
+                            {s.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            }
+
+            if (l.href.startsWith("/") && !l.href.startsWith("/#")) {
+              return (
+                <Link
+                  key={l.href}
+                  to={l.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {l.label}
+                </Link>
+              );
+            }
+
+            return (
               <a
                 key={l.href}
                 href={l.href}
@@ -75,8 +133,8 @@ const Header = () => {
               >
                 {l.label}
               </a>
-            )
-          )}
+            );
+          })}
           <a
             href={WHATSAPP_URL}
             target="_blank"
@@ -104,18 +162,58 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden glass border-t border-border overflow-hidden"
           >
-            <div className="container mx-auto py-4 px-4 flex flex-col gap-4">
-              {navLinks.map((l) =>
-                l.href.startsWith("/") && !l.href.startsWith("/#") ? (
-                  <Link
-                    key={l.href}
-                    to={l.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2"
-                  >
-                    {l.label}
-                  </Link>
-                ) : (
+            <div className="container mx-auto py-4 px-4 flex flex-col gap-2">
+              {navLinks.map((l) => {
+                if (l.dropdown) {
+                  return (
+                    <div key={l.href}>
+                      <button
+                        onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+                        className="flex items-center justify-between w-full text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2"
+                      >
+                        {l.label}
+                        <ChevronDown className={`w-4 h-4 transition-transform ${mobileSolutionsOpen ? "rotate-180" : ""}`} />
+                      </button>
+                      <AnimatePresence>
+                        {mobileSolutionsOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="pl-4 flex flex-col gap-1"
+                          >
+                            {solutionLinks.map((s) => (
+                              <Link
+                                key={s.href}
+                                to={s.href}
+                                onClick={() => setMobileOpen(false)}
+                                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+                              >
+                                <s.icon className="w-4 h-4 text-primary" />
+                                {s.label}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
+                if (l.href.startsWith("/") && !l.href.startsWith("/#")) {
+                  return (
+                    <Link
+                      key={l.href}
+                      to={l.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2"
+                    >
+                      {l.label}
+                    </Link>
+                  );
+                }
+
+                return (
                   <a
                     key={l.href}
                     href={l.href}
@@ -131,8 +229,8 @@ const Header = () => {
                   >
                     {l.label}
                   </a>
-                )
-              )}
+                );
+              })}
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
