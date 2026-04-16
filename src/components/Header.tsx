@@ -51,11 +51,11 @@ const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/30"
     >
-      <div className="container mx-auto flex items-center justify-between py-0 px-4 lg:px-8">
+      <div className="container mx-auto flex items-center justify-between py-1 px-4 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="iResolve Global" className="h-36 w-auto" />
+          <img src={logo} alt="iResolve Global" className="h-16 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
