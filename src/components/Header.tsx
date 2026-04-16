@@ -159,9 +159,10 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass border-t border-border overflow-hidden"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="lg:hidden fixed left-0 right-0 top-[60px] glass border-t border-border overflow-hidden w-screen"
           >
-            <div className="container mx-auto py-4 px-4 flex flex-col gap-2">
+            <div className="w-full py-6 px-6 flex flex-col gap-2">
               {navLinks.map((l) => {
                 if (l.dropdown) {
                   return (
