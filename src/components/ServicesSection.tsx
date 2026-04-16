@@ -1,96 +1,119 @@
 import { motion } from "framer-motion";
-import { Rocket, Users, Target, Settings } from "lucide-react";
-import { useState } from "react";
+import { TrendingUp, Megaphone, Users, DollarSign } from "lucide-react";
 
 const services = [
   {
-    icon: Rocket,
-    title: "Revenue Engine Setup",
-    description: "End-to-end pipeline infrastructure that generates leads on autopilot.",
-    features: ["Outbound campaigns (email, LinkedIn, calling)", "CRM + pipeline setup & management", "Lead generation systems & automation"],
+    icon: TrendingUp,
+    title: "Pipeline Generation",
+    description:
+      "Build a consistent flow of qualified leads through targeted outreach, structured pipelines, and optimized conversion strategies.",
+    tags: [
+      "Lead sourcing & targeting",
+      "Pipeline setup & tracking",
+      "Conversion improvement",
+    ],
+    size: "normal" as const,
+  },
+  {
+    icon: Megaphone,
+    title: "Marketing & Demand Generation",
+    description:
+      "Drive awareness, generate demand, and convert prospects through performance-driven marketing strategies.",
+    tags: [
+      "Demand Generation",
+      "Digital Marketing",
+      "Campaign Strategy",
+      "Awareness Campaigns",
+      "Marketing Automation",
+      "SEO Optimization",
+      "Brand Positioning",
+      "Marketing Acceleration",
+    ],
+    size: "large" as const,
   },
   {
     icon: Users,
-    title: "Offshore Team Setup",
-    description: "Build dedicated remote teams at a fraction of the cost.",
-    features: ["60% cost savings vs in-house", "Hiring + onboarding in 2 weeks", "Dedicated, fully managed remote teams"],
+    title: "Sales & Team Enablement",
+    description:
+      "Strengthen your sales function with the right strategy, processes, and team support to improve performance.",
+    tags: [
+      "Pipeline to Revenue",
+      "Growth Enablement",
+      "Inside Sales Setup",
+      "Sales Acceleration",
+    ],
+    size: "large" as const,
   },
   {
-    icon: Target,
-    title: "Demand Generation",
-    description: "Multi-channel campaigns that flood your pipeline with qualified leads.",
-    features: ["Multi-channel outreach campaigns", "500+ qualified prospects/month", "Meeting booking systems & follow-up"],
-  },
-  {
-    icon: Settings,
-    title: "Business Operations",
-    description: "Streamline operations so you can focus on growth.",
-    features: ["Process optimization & SOPs", "Automation + workflow design", "KPI tracking & reporting dashboards"],
+    icon: DollarSign,
+    title: "Cost Optimization",
+    description:
+      "Build and scale dedicated teams or execute projects efficiently while optimizing operational costs.",
+    tags: [
+      "Identify Gaps",
+      "Productivity",
+      "Improve margins",
+      "Team Setup",
+      "Project Based Execution",
+      "Smart Scaling",
+      "Execution Pods",
+    ],
+    size: "normal" as const,
   },
 ];
 
-const ServicesSection = () => {
-  const [expanded, setExpanded] = useState<number | null>(null);
+const ServicesSection = () => (
+  <section id="services" className="py-24 relative">
+    <div className="absolute inset-0 bg-grid opacity-30" />
+    <div className="container mx-auto px-4 relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4">
+          Our <span className="text-gradient">4 Pillars</span> of Growth
+        </h2>
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Everything you need to build, scale, and dominate your market.
+        </p>
+      </motion.div>
 
-  return (
-    <section id="services" className="py-24 relative">
-      <div className="absolute inset-0 bg-grid opacity-30" />
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-4">
-            Our <span className="text-gradient">4 Pillars</span> of Growth
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Everything you need to build, scale, and dominate your market.
-          </p>
-        </motion.div>
+      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {services.map((s, i) => (
+          <motion.div
+            key={s.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="glass rounded-2xl p-8 group hover:border-primary/30 transition-all duration-500"
+          >
+            <h3 className="font-heading text-2xl font-bold mb-3">
+              {s.title}
+            </h3>
+            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+              {s.description}
+            </p>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {services.map((s, i) => (
-            <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              onClick={() => setExpanded(expanded === i ? null : i)}
-              className="glass rounded-2xl p-8 cursor-pointer group hover:glow-primary transition-all duration-500 hover:-translate-y-1"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <s.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-heading text-xl font-bold mb-2">{s.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{s.description}</p>
-                  <motion.ul
-                    initial={false}
-                    animate={{ height: expanded === i ? "auto" : 0, opacity: expanded === i ? 1 : 0 }}
-                    className="overflow-hidden space-y-2"
-                  >
-                    {s.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-secondary-foreground">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </motion.ul>
-                  <span className="text-xs text-primary mt-2 inline-block">
-                    {expanded === i ? "Click to collapse" : "Click to learn more →"}
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+            {/* Tags area */}
+            <div className="flex flex-wrap gap-2">
+              {s.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-muted/50 border border-border/50 text-xs text-muted-foreground"
+                >
+                  {tag}
+                  <TrendingUp className="w-3 h-3 text-primary/60" />
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default ServicesSection;
