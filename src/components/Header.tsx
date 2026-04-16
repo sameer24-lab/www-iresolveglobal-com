@@ -55,7 +55,7 @@ const Header = () => {
         scrolled ? "glass glow-primary/10 shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
+      <div className="container mx-auto flex items-center justify-between py-2 px-4 lg:px-8">
         <Link to="/" className="flex items-center gap-2">
           <img src={logo} alt="iResolve Global" className="h-36 w-auto" />
         </Link>
