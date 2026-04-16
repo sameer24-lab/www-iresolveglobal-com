@@ -14,11 +14,11 @@ const solutionLinks = [
 ];
 
 const navLinks = [
-  { label: "About", href: "/#about" },
-  { label: "Solutions", href: "/#solutions", dropdown: true },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Process", href: "/#process" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Explore Solutions", href: "/#solutions", dropdown: true },
+  { label: "What We Solve", href: "/#about" },
+  { label: "Why Choose Us", href: "/#why-us" },
+  { label: "Execution Playbooks", href: "/case-studies" },
+  { label: "Plan Your Growth Strategy", href: "/#contact" },
 ];
 
 const Header = () => {
