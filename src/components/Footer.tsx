@@ -7,11 +7,12 @@ const Footer = () => (
         <div className="flex items-center gap-3">
           <img src={logo} alt="iResolve Global" className="h-36 w-auto" loading="lazy" />
         </div>
-        <div className="flex gap-6 text-sm text-muted-foreground">
-          <a href="#about" className="hover:text-primary transition-colors">About</a>
-          <a href="#services" className="hover:text-primary transition-colors">Services</a>
-          <a href="#case-studies" className="hover:text-primary transition-colors">Case Studies</a>
-          <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+        <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
+          <a href="/#about" className="hover:text-primary transition-colors">About</a>
+          <a href="/#solutions" className="hover:text-primary transition-colors">Solutions</a>
+          <a href="/case-studies" className="hover:text-primary transition-colors">Case Studies</a>
+          <a href="/careers" className="hover:text-primary transition-colors">Careers</a>
+          <a href="/#contact" className="hover:text-primary transition-colors">Contact</a>
         </div>
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} iResolve Global. All rights reserved.
