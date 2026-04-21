@@ -10,6 +10,7 @@ import OffshoreTeam from "./pages/OffshoreTeam.tsx";
 import DemandGeneration from "./pages/DemandGeneration.tsx";
 import BusinessOperations from "./pages/BusinessOperations.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
+import Careers from "./pages/Careers.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/solutions/demand-generation" element={<DemandGeneration />} />
           <Route path="/solutions/business-operations" element={<BusinessOperations />} />
           <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
