@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  "0xMetaLabs", "Cerebral Alphatech", "O2b Technologies", "Brickslane", "Krishna Enterprises",
+  "0xMetaLabs", "Cerebral Alphatech", "O2b Technologies", "Brickslane", "Krishna Enterprises", "TLB",
 ];
 
 const SocialProofStrip = () => (
