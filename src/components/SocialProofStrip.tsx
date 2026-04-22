@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  "TechCorp", "ScaleUp Inc", "GrowthLabs", "DataDriven", "CloudFirst",
-  "NextGen AI", "FundFlow", "MarketEdge", "SalesForce Pro", "LeadPeak",
+  "0xMetaLabs", "Cerebral Alphatech", "O2b Technologies", "Brickslane", "Krishna Enterprises",
 ];
 
 const SocialProofStrip = () => (
