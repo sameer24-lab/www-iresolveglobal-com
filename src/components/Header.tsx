@@ -18,7 +18,6 @@ const navLinks = [
   { label: "What We Solve", href: "/#execution" },
   { label: "Why Choose Us", href: "/#why-us" },
   { label: "Execution Playbooks", href: "/case-studies" },
-  { label: "Plan Your Growth Strategy", href: "/#contact" },
 ];
 
 const Header = () => {
