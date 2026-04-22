@@ -28,12 +28,10 @@ const HeroSection = () => {
             EXECUTION-FIRST BUSINESS PARTNER
           </span>
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            We Build Revenue Engines
-            <br />
-            <span className="text-gradient">That Scale Your Business</span>
+            Connect.<span className="text-gradient">Collaborate</span>.Grow
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            500+ Leads/Month · 3× Pipeline Growth · 60% Cost Savings
+            We Build Revenue Engines That Scale Your Business
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
