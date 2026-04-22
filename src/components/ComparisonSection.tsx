@@ -3,7 +3,7 @@ import { Check, X } from "lucide-react";
 
 const rows = [
   { feature: "Execution-first approach", us: true, them: false },
-  { feature: "Team ready in 2 weeks", us: true, them: false },
+  { feature: "Team ready in 3 weeks", us: true, them: false },
   { feature: "60% cost savings", us: true, them: false },
   { feature: "Full pipeline ownership", us: true, them: false },
   { feature: "Dedicated account manager", us: true, them: false },
