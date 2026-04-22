@@ -63,7 +63,7 @@ const HeroSection = () => {
               { end: 500, suffix: "+", label: "Leads/Month" },
               { end: 3, suffix: "×", label: "Pipeline Growth" },
               { end: 60, suffix: "%", label: "Cost Savings" },
-              { end: 2, suffix: " Weeks", label: "Team Ready" },
+              { end: 3, suffix: " Weeks", label: "Team Ready" },
             ].map((m) => (
               <div key={m.label} className="glass rounded-xl p-4">
                 <div className="text-2xl md:text-3xl font-heading font-bold text-primary">
