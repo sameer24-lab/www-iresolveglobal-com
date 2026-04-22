@@ -14,11 +14,11 @@ const studies = [
   {
     title: "E-Commerce Brand Cuts Costs 60% with Offshore Team",
     problem: "Growing operational costs were eating into margins. Customer support and order management needed full-time staff at lower cost.",
-    solution: "We sourced, hired, and onboarded a 12-person offshore team in under 2 weeks — fully integrated with their existing workflows.",
+    solution: "We sourced, hired, and onboarded a 12-person offshore team in under 3 weeks — fully integrated with their existing workflows.",
     results: [
       { metric: "60%", label: "Cost Reduction" },
       { metric: "12", label: "Team Members" },
-      { metric: "2 weeks", label: "Setup Time" },
+      { metric: "3 weeks", label: "Setup Time" },
     ],
   },
   {
