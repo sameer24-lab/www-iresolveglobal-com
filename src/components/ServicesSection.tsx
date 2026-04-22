@@ -22,7 +22,7 @@ const services = [
       "Scale your operations with dedicated remote teams — hired, trained, and managed for peak performance.",
     tags: [
       "60% Cost Savings",
-      "Hiring + Onboarding in 2 Weeks",
+      "Hiring + Onboarding in 3 Weeks",
       "Dedicated Remote Teams",
     ],
     href: "/solutions/offshore-team",
