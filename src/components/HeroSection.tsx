@@ -31,8 +31,9 @@ const HeroSection = () => {
             Connect.<span className="text-gradient">Collaborate</span>.Grow
           </h1>
           <p
-            className="font-heading font-bold text-2xl md:text-3xl lg:text-4xl max-w-3xl mx-auto mb-10 text-accent"
+            className="font-heading font-bold text-2xl md:text-3xl lg:text-4xl max-w-3xl mx-auto mb-10"
             style={{
+              color: "hsl(265 85% 78%)",
               textShadow:
                 "0 0 12px hsl(var(--accent) / 0.8), 0 0 28px hsl(var(--accent) / 0.55), 0 0 48px hsl(var(--accent) / 0.35)",
             }}
