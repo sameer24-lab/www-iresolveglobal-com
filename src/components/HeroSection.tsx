@@ -30,7 +30,13 @@ const HeroSection = () => {
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             Connect.<span className="text-gradient">Collaborate</span>.Grow
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+          <p
+            className="font-heading font-bold text-2xl md:text-3xl lg:text-4xl max-w-3xl mx-auto mb-10 text-primary"
+            style={{
+              textShadow:
+                "0 0 12px hsl(var(--primary) / 0.7), 0 0 28px hsl(var(--primary) / 0.5), 0 0 48px hsl(var(--primary) / 0.3)",
+            }}
+          >
             We Build Revenue Engines That Scale Your Business
           </p>
 
