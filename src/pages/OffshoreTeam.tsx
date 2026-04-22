@@ -13,8 +13,8 @@ const features = [
   },
   {
     icon: Clock,
-    title: "Team Ready in 2 Weeks",
-    description: "From job brief to onboarded team members in under 14 days. No long hiring cycles.",
+    title: "Team Ready in 3 Weeks",
+    description: "From job brief to onboarded team members in under 21 days. No long hiring cycles.",
   },
   {
     icon: Users,
@@ -40,7 +40,7 @@ const features = [
 
 const results = [
   { metric: "60%", label: "Cost Savings" },
-  { metric: "2 Weeks", label: "Setup Time" },
+  { metric: "3 Weeks", label: "Setup Time" },
   { metric: "50+", label: "Teams Built" },
   { metric: "96%", label: "Retention Rate" },
 ];

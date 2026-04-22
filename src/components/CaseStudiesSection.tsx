@@ -18,7 +18,7 @@ const studies = [
     results: [
       { metric: "60%", label: "Cost Reduction" },
       { metric: "12", label: "Team Members" },
-      { metric: "2 weeks", label: "Setup Time" },
+      { metric: "3 weeks", label: "Setup Time" },
     ],
   },
   {
