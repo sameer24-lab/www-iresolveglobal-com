@@ -53,7 +53,15 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50"
     >
       {/* Logo - floats independently over the page */}
-      <Link to="/" className="absolute top-2 left-4 lg:left-8 z-10 drop-shadow-[0_0_12px_hsl(var(--primary)/0.4)]">
+      <Link
+        to="/"
+        onClick={() => {
+          if (location.pathname === "/") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+        }}
+        className="absolute top-2 left-4 lg:left-8 z-10 drop-shadow-[0_0_12px_hsl(var(--primary)/0.4)]"
+      >
         <img src={logo} alt="iResolve Global" className="h-[7.5rem] w-auto" />
       </Link>
       <div className="container mx-auto flex items-center justify-end py-3 px-4 lg:px-8">
